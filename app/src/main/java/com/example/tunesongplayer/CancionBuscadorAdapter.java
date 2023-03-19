@@ -52,17 +52,12 @@ public class CancionBuscadorAdapter extends BaseAdapter {
         TextView nombreCancion = (TextView) view.findViewById(R.id.tv_NombreCancionEnBuscador);
         TextView autorCancion = (TextView) view.findViewById(R.id.tv_AutorCancionEnBuscador);
         ImageView fotoCancionEnBuscador = (ImageView) view.findViewById(R.id.fotoCancionEnBuscador);
-        //ImageButton bt_PlayBuscador = (ImageButton) view.findViewById(R.id.bt_PlayBuscador);
-        //ImageButton bt_StopBuscador = (ImageButton) view.findViewById(R.id.bt_StopBuscador);
-       // Button bt_AñadirBuscador = (Button) view.findViewById(R.id.bt_añadir);
 
         //Asignamos a los elementos de la lista los valores que el adaptador ha recibido en la constructora
         // (los valores de los atributos)
         nombreCancion.setText(nombresCanciones[i]);
         autorCancion.setText(autoresCanciones[i]);
         fotoCancionEnBuscador.setImageResource(R.drawable.iconocancion);
-        //bt_PlayBuscador.setImageResource(android.R.drawable.ic_media_play);
-        //bt_StopBuscador.setImageResource(android.R.drawable.picture_frame);
 
 
         return view;

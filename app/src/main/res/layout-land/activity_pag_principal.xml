@@ -3,18 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".PagPrincipal">
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/et_BuscaUnaCancion"
+        android:layout_width="309dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="@string/BuscaUnaCancion"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/logo_TuneSongPlayer2"
-        android:layout_width="99dp"
-        android:layout_height="91dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/imageView5"
+        android:layout_width="67dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="20dp"
+        android:onClick="lupa_onClick"
+        app:layout_constraintEnd_toStartOf="@+id/imageView3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/et_BuscaUnaCancion"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logotunesongplayer" />
+        app:srcCompat="?android:attr/actionModeWebSearchDrawable" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -27,30 +40,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_help" />
 
-    <EditText
-        android:id="@+id/et_BuscaUnaCancion"
-        android:layout_width="309dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
-        android:ems="10"
-        android:hint="@string/BuscaUnaCancion"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/imageView5"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo_TuneSongPlayer2" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="67dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:onClick="lupa_onClick"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:srcCompat="?android:attr/actionModeWebSearchDrawable" />
 
     <LinearLayout
         android:id="@+id/linearLayoutPagPrincipal"
@@ -65,8 +54,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginBottom="0dp"
             android:orientation="horizontal"
+            android:layout_marginBottom="0dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/et_BuscaUnaCancion">
 
@@ -87,7 +76,7 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="600dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -98,7 +87,7 @@
                     android:id="@+id/tv_TusPlaylists"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="80dp"
                     android:gravity="center|center_horizontal"
                     android:text="@string/tv_TusPlaylists"
                     android:textColor="#FFFFFF"
@@ -118,6 +107,7 @@
 
     </LinearLayout>
 
+
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="70dp"
@@ -127,35 +117,18 @@
         android:onClick="informacion_onClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutPagPrincipal"
         app:layout_constraintVertical_bias="0.83"
         app:srcCompat="@android:drawable/ic_dialog_info" />
-
-    <ImageView
-        android:id="@+id/imageView14"
-        android:layout_width="88dp"
-        android:layout_height="73dp"
-        android:layout_marginBottom="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageView13"
-        app:layout_constraintHorizontal_bias="0.486"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutPagPrincipal"
-        app:layout_constraintVertical_bias="0.85"
-        app:srcCompat="@drawable/notamusical" />
 
     <ImageView
         android:id="@+id/imageView13"
         android:layout_width="87dp"
         android:layout_height="71dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="24dp"
         android:onClick="perfilUsuario_onClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutPagPrincipal"
-        app:layout_constraintVertical_bias="0.90999997"
         app:srcCompat="@drawable/imagenusuario" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

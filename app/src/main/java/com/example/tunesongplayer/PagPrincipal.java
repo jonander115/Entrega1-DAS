@@ -6,11 +6,16 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentContainerView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -21,14 +26,15 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 
 public class PagPrincipal extends AppCompatActivity {
 
-    private ArrayList<String> cancionesAñadidas = new ArrayList<String>();
-    private ArrayList<String> autoresAñadidos = new ArrayList<String>();
     private String usuario;
     private PlaylistAdapter adapter;
+    private int CODIGO_DE_PERMISO = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +45,20 @@ public class PagPrincipal extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             usuario = extras.getString("usuario");
+        }
+
+        //Pedimos permiso para las notificaciones
+        //La aplicación debe funcionar a partir de la versión Oreo
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+
+            //Comprobamos si el permiso está concedido
+            if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+
+                //El permiso no está concedido, lo pedimos
+                String[] permisos = new String[] {android.Manifest.permission.POST_NOTIFICATIONS};
+                ActivityCompat.requestPermissions(this,permisos, CODIGO_DE_PERMISO);
+            }
+
         }
 
         //Accedemos a los elementos de la vista
@@ -88,14 +108,6 @@ public class PagPrincipal extends AppCompatActivity {
         refrescarLista();
     }
 
-    //Método para cuando se haga click en la llave inglesa
-    //Permite acceder a los ajustes de la aplicación
-    public void ajustes_onClick(View v){
-        //preferencias / cambio idioma / dialog...
-        //PERMITIR QUITAR EL SONIDO O ALGO ASI
-        //hacer lo minimo para llegar al 5 al menos!!!
-    }
-
 
     //Método para cuando se haga click en el signo de interrogación
     //Muestra un diálogo que explica brevemente algunas acciones principales que se pueden realizar en la aplicación
@@ -142,15 +154,6 @@ public class PagPrincipal extends AppCompatActivity {
     }
 
 
-    //Método que abre un intent implícito que abre el navegador, mostrando el código fuente de la aplicación
-    //Se accede a él pulsando el botón de Ver código fuente del diálogo de información sobre la aplicación
-    public void onClick_CodigoFuente(View v){
-
-
-        //intent implicito al repo de github
-    }
-
-
     //Método para mostrar las playlists del usuario
     public void refrescarLista(){
         //Creamos una conexión a la base de datos de la aplicación
@@ -179,7 +182,6 @@ public class PagPrincipal extends AppCompatActivity {
 
         }
 
-
         //Cerramos el cursor y la conexión a la base de datos
         cursor.close();
         bd.close();
@@ -196,6 +198,7 @@ public class PagPrincipal extends AppCompatActivity {
         adapter = new PlaylistAdapter(this, arrayPlaylists, arrayNumsCanciones, usuario);
         listViewPlaylists.setAdapter(adapter);
     }
+
 
     //Método para cuando se hace click en una playlist y se puedan ver las canciones que contiene
     public void onClick_Playlist(View v){
@@ -218,14 +221,4 @@ public class PagPrincipal extends AppCompatActivity {
         });
     }
 
-
-
-
-
-    //GESTIONAR LO DEL GIRO... los restore....los ids que coincidan en vertical y horizontal pero que no coincidan en distintas actividades...
-    //igual alguna cosa tiene que ir como atributo
-
-
-
-    //notificaciones... intents implicitos?????
 }

@@ -32,9 +32,6 @@ public class DialogInstrucciones extends DialogFragment {
         TextView tv_Selecciona = aspectoDialog.findViewById(R.id.tv_Selecciona);
         tv_Selecciona.setText("Selecciona los siguientes botones para:");
 
-        TextView tv_IconoAjustes = aspectoDialog.findViewById(R.id.tv_IconoAjustes);
-        tv_IconoAjustes.setText("Abrir los ajustes de la aplicación");
-
         TextView tv_IconoLupa = aspectoDialog.findViewById(R.id.tv_IconoLupa);
         tv_IconoLupa.setText("Buscar la canción escrita en la barra de búsqueda");
 
