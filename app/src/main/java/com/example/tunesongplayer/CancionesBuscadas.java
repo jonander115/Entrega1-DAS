@@ -96,9 +96,9 @@ public class CancionesBuscadas extends AppCompatActivity {
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 //Recogemos información para enviar
-                TextView tv_NombreCancionEnBuscador = (TextView) findViewById(R.id.tv_NombreCancionEnBuscador);
+                TextView tv_NombreCancionEnBuscador = (TextView) view.findViewById(R.id.tv_NombreCancionEnBuscador);
                 String nombreCancionDelBotonPulsado = tv_NombreCancionEnBuscador.getText().toString();
-                TextView tv_AutorCancionEnBuscador = (TextView) findViewById(R.id.tv_AutorCancionEnBuscador);
+                TextView tv_AutorCancionEnBuscador = (TextView) view.findViewById(R.id.tv_AutorCancionEnBuscador);
                 String autorCancionDelBotonPulsado = tv_AutorCancionEnBuscador.getText().toString();
 
                 //Preparamos y lanzamos el diálogo
@@ -120,9 +120,9 @@ public class CancionesBuscadas extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 //Recogemos nombre y autor de la canción
-                TextView tv_NombreCancionEnBuscador = (TextView) findViewById(R.id.tv_NombreCancionEnBuscador);
+                TextView tv_NombreCancionEnBuscador = (TextView) view.findViewById(R.id.tv_NombreCancionEnBuscador);
                 String nombreCancionDelBotonPulsado = tv_NombreCancionEnBuscador.getText().toString();
-                TextView tv_AutorCancionEnBuscador = (TextView) findViewById(R.id.tv_AutorCancionEnBuscador);
+                TextView tv_AutorCancionEnBuscador = (TextView) view.findViewById(R.id.tv_AutorCancionEnBuscador);
                 String autorCancionDelBotonPulsado = tv_AutorCancionEnBuscador.getText().toString();
 
                 //Ponemos / Paramos la música
