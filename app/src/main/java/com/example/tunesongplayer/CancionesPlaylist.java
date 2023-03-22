@@ -58,9 +58,9 @@ public class CancionesPlaylist extends AppCompatActivity {
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 //Recogemos información para enviar
-                TextView tv_NombreCancionEnPlaylist = (TextView) findViewById(R.id.tv_NombreCancionEnPlaylist);
+                TextView tv_NombreCancionEnPlaylist = (TextView) view.findViewById(R.id.tv_NombreCancionEnPlaylist);
                 String nombreCancionDePlaylistPulsada = tv_NombreCancionEnPlaylist.getText().toString();
-                TextView tv_AutorCancionEnPlaylist = (TextView) findViewById(R.id.tv_AutorCancionEnPlaylist);
+                TextView tv_AutorCancionEnPlaylist = (TextView) view.findViewById(R.id.tv_AutorCancionEnPlaylist);
                 String autorCancionDePlaylistPulsada = tv_AutorCancionEnPlaylist.getText().toString();
 
                 //Preparamos y lanzamos el diálogo
@@ -84,9 +84,9 @@ public class CancionesPlaylist extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 //Recogemos nombre y autor de la canción
-                TextView tv_NombreCancionEnPlaylist = (TextView) findViewById(R.id.tv_NombreCancionEnPlaylist);
+                TextView tv_NombreCancionEnPlaylist = (TextView) view.findViewById(R.id.tv_NombreCancionEnPlaylist);
                 String nombreCancionDePlaylistPulsada = tv_NombreCancionEnPlaylist.getText().toString();
-                TextView tv_AutorCancionEnPlaylist = (TextView) findViewById(R.id.tv_AutorCancionEnPlaylist);
+                TextView tv_AutorCancionEnPlaylist = (TextView) view.findViewById(R.id.tv_AutorCancionEnPlaylist);
                 String autorCancionDePlaylistPulsada = tv_AutorCancionEnPlaylist.getText().toString();
 
 
