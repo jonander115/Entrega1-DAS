@@ -43,7 +43,7 @@ public class miBD extends SQLiteOpenHelper {
                 "'NombreCancion' VARCHAR(200), " +
                 "'AutorCancion' VARCHAR(200), " +
                 "'NombreUsuario' VARCHAR(50), " +
-                "PRIMARY KEY ('NombrePlaylist','NombreCancion','NombreUsuario','NombreAutor'))");
+                "PRIMARY KEY ('NombrePlaylist','NombreCancion','NombreUsuario','AutorCancion'))");
 
         //Inserción de las canciones
         //Los archivos mp3 de las canciones están en la carpeta res/raw, pero su información se almacena en la base de datos
@@ -93,7 +93,7 @@ public class miBD extends SQLiteOpenHelper {
                 "'NombreCancion' VARCHAR(200), " +
                 "'AutorCancion' VARCHAR(200), " +
                 "'NombreUsuario' VARCHAR(50), " +
-                "PRIMARY KEY ('NombrePlaylist','NombreCancion','NombreUsuario','NombreAutor'))");
+                "PRIMARY KEY ('NombrePlaylist','NombreCancion','NombreUsuario','AutorCancion'))");
 
         //Inserción de las canciones
         //Los archivos mp3 de las canciones están en la carpeta res/raw, pero su información se almacena en la base de datos
